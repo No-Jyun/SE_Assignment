@@ -32,6 +32,7 @@ ListRentBikeUI::ListRentBikeUI(ListRentBike* refControl, ofstream* out_fp, ifstr
 	refListRentBike = refControl;
 	this->out_fp = out_fp;
 	this->in_fp = in_fp;
+	isFirstPrint = true;
 }
 
 void ListRentBikeUI::PrintMessage(string info)
@@ -41,9 +42,9 @@ void ListRentBikeUI::PrintMessage(string info)
 	}
 
 	// 출력 하기
-	if (isFirst) {
+	if (isFirstPrint == true) {
 		*out_fp << "5.1. 자전거 대여 리스트" << endl;
-		isFirst = false;
+		isFirstPrint = false;
 	}
 
 	*out_fp << info << endl;

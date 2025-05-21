@@ -32,8 +32,8 @@ private:
 
 public:
 	MemberInfo(string id, string pwd, string pn);
-	string GetMemberId() { return id; }
-	string GetMemberPwd() { return pwd; }
+	string GetMemberId();
+	string GetMemberPwd();
 	void AddBiketoList(BikeInfo* curBike);
 	RentList* GetRentList();
 };

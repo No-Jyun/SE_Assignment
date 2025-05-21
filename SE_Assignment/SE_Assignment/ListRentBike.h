@@ -28,7 +28,7 @@ class ListRentBikeUI : public BaseUI
 {
 private:
 	ListRentBike* refListRentBike;
-	bool isFirst = true;
+	bool isFirstPrint = true;
 
 public:
 	ListRentBikeUI(ListRentBike* refControl, ofstream* out_fp, ifstream* in_fp);

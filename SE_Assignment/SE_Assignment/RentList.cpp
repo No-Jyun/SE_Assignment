@@ -3,8 +3,9 @@
 
 RentList::RentList()
 {
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 50; i++) {
 		memRentList[i] = nullptr;
+	}
 }
 
 void RentList::AddBiketoList(BikeInfo* curBike)
@@ -14,6 +15,7 @@ void RentList::AddBiketoList(BikeInfo* curBike)
 
 void RentList::PrintAllBikeInfos(ListRentBikeUI* refUI)
 {
-	for (int i = 0; i < numList; i++)
+	for (int i = 0; i < numList; i++) {
 		memRentList[i]->PrintBikeInfo(refUI);
+	}
 }

@@ -15,10 +15,14 @@ BikeRent::BikeRent(LoginMember* refLoginMem, BikeDB* refDB)
 void BikeRent::RentBike(string id)
 {
 	curMember = refLoginMember->GetLoginMember();
-	if (curMember == nullptr) return;
+	if (curMember == nullptr) {
+		return;
+	}
 
 	curBike = refBikeDB->GetBike(id);
-	if (curBike == nullptr)return;
+	if (curBike == nullptr) {
+		return;
+	}
 
 	curMember->AddBiketoList(curBike);
 
@@ -50,7 +54,6 @@ void BikeRentUI::InputBikeInfo(string id)
 
 void BikeRentUI::HandleInputUI()
 {
-	// 입력 받기
 	if (in_fp == nullptr) {
 		return;
 	}
@@ -63,7 +66,6 @@ void BikeRentUI::HandleInputUI()
 
 void BikeRentUI::PrintMessage(string info)
 {
-	// 출력하기
 	if (out_fp == nullptr) {
 		return;
 	}

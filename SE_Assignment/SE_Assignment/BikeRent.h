@@ -32,8 +32,6 @@ class BikeRentUI : public BaseUI
 {
 private:
 	BikeRent* refBikeRent;
-	ofstream* out_fp;
-	ifstream* in_fp;
 
 public:
 	BikeRentUI(BikeRent* refControl, ofstream* out_fp, ifstream* in_fp);

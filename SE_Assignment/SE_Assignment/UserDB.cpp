@@ -3,8 +3,9 @@
 #include "BikeDB.h"
 
 UserDB::UserDB() {
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 50; i++) {
 		memberList[i] = nullptr;
+	}
 }
 
 void UserDB::RegisterUser(string id, string pwd, string pn) {
@@ -19,8 +20,9 @@ MemberInfo* UserDB::GetThisMember(string id, string pwd)
 		if (id == curId) {
 			string curPwd = memberList[i]->GetMemberPwd();
 
-			if (pwd == curPwd)
+			if (pwd == curPwd) {
 				return memberList[i];
+			}
 		}
 	}
 	return nullptr;
@@ -45,6 +47,16 @@ MemberInfo::MemberInfo(string id, string pwd, string pn) {
 	this->pn = pn;
 
 	rentBikeList = new RentList();
+}
+
+string MemberInfo::GetMemberId()
+{
+	return id;
+}
+
+string MemberInfo::GetMemberPwd()
+{
+	return pwd;
 }
 
 void MemberInfo::AddBiketoList(BikeInfo* curBike) {

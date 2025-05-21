@@ -3,8 +3,9 @@
 
 BikeDB::BikeDB()
 {
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 50; i++) {
 		bikeList[i] = nullptr;
+	}
 }
 
 void BikeDB::RegisterBike(string id, string name)
@@ -17,8 +18,9 @@ BikeInfo* BikeDB::GetBike(string id)
 	for (int i = 0; i < numList; i++) {
 		string curId = bikeList[i]->GetBikeId();
 
-		if (id == curId)
+		if (id == curId) {
 			return bikeList[i];
+		}
 	}
 	return nullptr;
 }

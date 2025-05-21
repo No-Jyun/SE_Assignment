@@ -39,13 +39,11 @@ LogoutUI::LogoutUI(Logout* refControl, ofstream* out_fp, ifstream* in_fp)
 
 void LogoutUI::StartLogoutUI()
 {
-	// 시작하기
 	refLogout->LogoutCurMem();
 }
 
 void LogoutUI::PrintMessage(string info)
 {
-	// 출력 하기
 	if (out_fp == nullptr) {
 		return;
 	}
