@@ -23,7 +23,6 @@
 using namespace std;
 
 // 상수 선언
-#define MAX_STRING 32
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
@@ -55,9 +54,10 @@ int main()
 	out_fp.open(OUTPUT_FILE_NAME);
 
 	if (in_fp.is_open()) {
-		doTask();
+		doTask();			// 공유 자전거 대여 시스템 시작
 	}
 
+	// 파일 닫기
 	out_fp.close();
 	in_fp.close();
 
@@ -81,11 +81,11 @@ void doTask()
 		case 1:
 			switch (menu_level_2)
 			{
-			case 1:   // "1.1. 회원가입“ 메뉴 부분
+			case 1:   // "1.1. 회원가입" 메뉴 부분
 				if (userRegister == nullptr) {
 					userRegister = new UserRegister(userDB);
 				}
-
+				// 회원가입 UseCase 시작
 				userRegister->StartUserRegister(&out_fp, &in_fp);
 
 				break;
@@ -95,11 +95,11 @@ void doTask()
 		case 2:
 			switch (menu_level_2)
 			{
-			case 1:   // "2.1 로그인“ 메뉴 부분
+			case 1:   // "2.1 로그인" 메뉴 부분
 				if (login == nullptr) {
 					login = new Login(userDB, loginMember);
 				}
-
+				// 로그인 UseCase 시작
 				login->StartLogin(&out_fp, &in_fp);
 
 				break;
@@ -107,7 +107,7 @@ void doTask()
 				if (logout == nullptr) {
 					logout = new Logout(loginMember);
 				}
-
+				// 로그아웃 UseCase 시작
 				logout->StartLogout(&out_fp, &in_fp);
 
 				break;
@@ -117,11 +117,11 @@ void doTask()
 		case 3:
 			switch (menu_level_2)
 			{
-			case 1:   // "3.1. 자전거 등록“ 메뉴 부분
+			case 1:   // "3.1. 자전거 등록" 메뉴 부분
 				if (bikeRegister == nullptr) {
 					bikeRegister = new BikeRegister(bikeDB);
 				}
-
+				// 자전거 등록 UseCase 시작
 				bikeRegister->StartBikeRegister(&out_fp, &in_fp);
 
 				break;
@@ -131,11 +131,11 @@ void doTask()
 		case 4:
 			switch (menu_level_2)
 			{
-			case 1:   // "4.1. 자전거 대여“ 메뉴 부분
+			case 1:   // "4.1. 자전거 대여" 메뉴 부분
 				if (bikeRent == nullptr) {
 					bikeRent = new BikeRent(loginMember, bikeDB);
 				}
-
+				// 자전거 대여 UseCase 시작
 				bikeRent->StartBikeRent(&out_fp, &in_fp);
 
 				break;
@@ -145,11 +145,11 @@ void doTask()
 		case 5:
 			switch (menu_level_2)
 			{
-			case 1:   // "5.1. 자전거 대여 리스트“ 메뉴 부분
+			case 1:   // "5.1. 자전거 대여 리스트" 메뉴 부분
 				if (listRentBike == nullptr) {
 					listRentBike = new ListRentBike(loginMember);
 				}
-
+				// 자전거 대여 리스트 UseCase 시작
 				listRentBike->StartListRentBike(&out_fp, &in_fp);
 
 				break;
@@ -159,7 +159,7 @@ void doTask()
 		case 6:
 			switch (menu_level_2)
 			{
-			case 1:   // "6.1. 종료“ 메뉴 부분
+			case 1:   // "6.1. 종료" 메뉴 부분
 				program_exit();
 				is_program_exit = 1;
 				break;
@@ -170,6 +170,7 @@ void doTask()
 	}
 }
 
+// 종료 메뉴 처리용 함수
 void program_exit()
 {
 	out_fp << "6.1. 종료";

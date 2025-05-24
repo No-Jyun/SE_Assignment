@@ -17,9 +17,17 @@
 > kim pwdpwd
 
 4.1. 자전거 대여
+> b2 bikeProducer
+
+4.1. 자전거 대여
 > b1 bikeMaker
 
 5.1. 자전거 대여 리스트
 > b1 bikeMaker
+> b2 bikeProducer
+
+5.1. 자전거 대여 리스트
+> b1 bikeMaker
+> b2 bikeProducer
 
 6.1. 종료
