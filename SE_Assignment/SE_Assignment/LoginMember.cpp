@@ -4,7 +4,7 @@
 //
 
 #include "LoginMember.h"
-#include "UserDB.h"
+#include "MemberInfo.h"
 
 /*
 	함수 이름 : LoginMember::LoginMember()

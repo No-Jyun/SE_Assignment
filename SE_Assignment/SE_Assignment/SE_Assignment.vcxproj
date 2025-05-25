@@ -129,28 +129,44 @@
   <ItemGroup>
     <ClInclude Include="BaseUI.h" />
     <ClInclude Include="BikeDB.h" />
+    <ClInclude Include="BikeInfo.h" />
     <ClInclude Include="BikeRegister.h" />
+    <ClInclude Include="BikeRegisterUI.h" />
     <ClInclude Include="BikeRent.h" />
+    <ClInclude Include="BikeRentUI.h" />
     <ClInclude Include="ListRentBike.h" />
+    <ClInclude Include="ListRentBikeUI.h" />
     <ClInclude Include="Login.h" />
     <ClInclude Include="LoginMember.h" />
+    <ClInclude Include="LoginUI.h" />
     <ClInclude Include="Logout.h" />
+    <ClInclude Include="LogoutUI.h" />
+    <ClInclude Include="MemberInfo.h" />
     <ClInclude Include="RentList.h" />
     <ClInclude Include="UserDB.h" />
     <ClInclude Include="UserRegister.h" />
+    <ClInclude Include="UserRegisterUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BikeDB.cpp" />
+    <ClCompile Include="BikeInfo.cpp" />
     <ClCompile Include="BikeRegister.cpp" />
+    <ClCompile Include="BikeRegisterUI.cpp" />
     <ClCompile Include="BikeRent.cpp" />
+    <ClCompile Include="BikeRentUI.cpp" />
     <ClCompile Include="ListRentBike.cpp" />
+    <ClCompile Include="ListRentBikeUI.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="LoginMember.cpp" />
+    <ClCompile Include="LoginUI.cpp" />
     <ClCompile Include="Logout.cpp" />
+    <ClCompile Include="LogoutUI.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MemberInfo.cpp" />
     <ClCompile Include="RentList.cpp" />
     <ClCompile Include="UserDB.cpp" />
     <ClCompile Include="UserRegister.cpp" />
+    <ClCompile Include="UserRegisterUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />

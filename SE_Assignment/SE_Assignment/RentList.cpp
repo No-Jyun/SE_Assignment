@@ -6,7 +6,7 @@
 #include <algorithm>
 
 #include "RentList.h"
-#include "BikeDB.h"
+#include "BikeInfo.h"
 
 /*
 	함수 이름 : RentList::RentList()
