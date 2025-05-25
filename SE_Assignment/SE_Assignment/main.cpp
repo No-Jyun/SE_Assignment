@@ -19,6 +19,7 @@
 #include "BikeRegister.h"
 #include "ListRentBike.h"
 #include "BikeRent.h"
+#include "ProgramExit.h"
 
 using namespace std;
 
@@ -46,6 +47,7 @@ Logout* logout = nullptr;
 BikeRegister* bikeRegister = nullptr;
 ListRentBike* listRentBike = nullptr;
 BikeRent* bikeRent = nullptr;
+ProgramExit* programExit = nullptr;
 
 int main()
 {
@@ -83,6 +85,7 @@ void doTask()
 			{
 			case 1:   // "1.1. 회원가입" 메뉴 부분
 				if (userRegister == nullptr) {
+					// 회원가입 UseCase 컨트롤 클래스 생성
 					userRegister = new UserRegister(userDB);
 				}
 				// 회원가입 UseCase 시작
@@ -97,6 +100,7 @@ void doTask()
 			{
 			case 1:   // "2.1 로그인" 메뉴 부분
 				if (login == nullptr) {
+					// 로그인 UseCase 컨트롤 클래스 생성
 					login = new Login(userDB, loginMember);
 				}
 				// 로그인 UseCase 시작
@@ -105,6 +109,7 @@ void doTask()
 				break;
 			case 2:		// "2.2 로그아웃" 메뉴 부분
 				if (logout == nullptr) {
+					// 로그아웃 UseCase 컨트롤 클래스 생성
 					logout = new Logout(loginMember);
 				}
 				// 로그아웃 UseCase 시작
@@ -119,6 +124,7 @@ void doTask()
 			{
 			case 1:   // "3.1. 자전거 등록" 메뉴 부분
 				if (bikeRegister == nullptr) {
+					// 자전거 등록 UseCase 컨트롤 클래스 생성
 					bikeRegister = new BikeRegister(bikeDB);
 				}
 				// 자전거 등록 UseCase 시작
@@ -133,6 +139,7 @@ void doTask()
 			{
 			case 1:   // "4.1. 자전거 대여" 메뉴 부분
 				if (bikeRent == nullptr) {
+					// 자전거 대여 UseCase 컨트롤 클래스 생성
 					bikeRent = new BikeRent(loginMember, bikeDB);
 				}
 				// 자전거 대여 UseCase 시작
@@ -147,6 +154,7 @@ void doTask()
 			{
 			case 1:   // "5.1. 자전거 대여 리스트" 메뉴 부분
 				if (listRentBike == nullptr) {
+					// 자전거 대여 조회 UseCase 컨트롤 클래스 생성
 					listRentBike = new ListRentBike(loginMember);
 				}
 				// 자전거 대여 리스트 UseCase 시작
@@ -160,18 +168,18 @@ void doTask()
 			switch (menu_level_2)
 			{
 			case 1:   // "6.1. 종료" 메뉴 부분
-				program_exit();
-				is_program_exit = 1;
+				if (programExit == nullptr) {
+					// 시스템 종료 컨트롤 클래스 생성
+					programExit = new ProgramExit();
+				}
+				// 시스템 종료 시작
+				programExit->StartProgramExit(&out_fp, &in_fp);
+				is_program_exit = 1;		// while문 탈출 명시
+
 				break;
 			}
 			break;
 		}
 		out_fp <<  endl;
 	}
-}
-
-// 종료 메뉴 처리용 함수
-void program_exit()
-{
-	out_fp << "6.1. 종료";
 }
